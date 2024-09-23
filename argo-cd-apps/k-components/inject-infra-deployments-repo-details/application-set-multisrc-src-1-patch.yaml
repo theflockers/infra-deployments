@@ -4,4 +4,4 @@
   value: https://github.com/theflockers/infra-deployments.git
 - op: replace
   path: /spec/template/spec/sources/1/targetRevision
-  value: preview-HEAD
+  value: preview-preview-HEAD
