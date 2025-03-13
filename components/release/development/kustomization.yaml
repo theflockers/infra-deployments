@@ -1,22 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
-- ../base/monitor/development
-- https://github.com/konflux-ci/release-service/config/default?ref=2f1b5f6c8f03a0a41c7075d54f53a70037f0d182
-- release_service_config.yaml
-
+  - ../base
+  - ../base/monitor/development
+  - https://github.com/theflockers/release-service/config/default?ref=ec1be7f47d83ecf09c6e58e0487b525b3c28c611
+  - release_service_config.yaml
 images:
-- name: quay.io/konflux-ci/release-service
-  newName: quay.io/konflux-ci/release-service
-  newTag: 2f1b5f6c8f03a0a41c7075d54f53a70037f0d182
-
+  - name: quay.io/konflux-ci/release-service
+    newName: quay.io/lmendes/release-service
+    newTag: ec1be7f47d83ecf09c6e58e0487b525b3c28c611
 namespace: release-service
-
 patches:
-- path: sealights-token-patch.yaml
-  target:
-    group: apps
-    kind: Deployment
-    name: controller-manager
-    version: v1
+  - path: sealights-token-patch.yaml
+    target:
+      group: apps
+      kind: Deployment
+      name: controller-manager
+      version: v1
