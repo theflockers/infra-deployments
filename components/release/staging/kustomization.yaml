@@ -4,7 +4,7 @@ resources:
   - ../base
   - ../base/monitor/staging
   - external-secrets/release-monitor-secret.yaml
-  - https://github.com/konflux-ci/release-service/config/default?ref=425341444a35e18093798228500e45b3ebb1d9f2
+  - https://github.com/konflux-ci/release-service/config/default?ref=ed7a726ceb2667cadb738afc7bef0ad70b0d5a22
   - release_service_config.yaml
   - signing_configs.yaml
 
@@ -14,6 +14,6 @@ components:
 images:
   - name: quay.io/konflux-ci/release-service
     newName: quay.io/konflux-ci/release-service
-    newTag: 425341444a35e18093798228500e45b3ebb1d9f2
+    newTag: ed7a726ceb2667cadb738afc7bef0ad70b0d5a22
 
 namespace: release-service
